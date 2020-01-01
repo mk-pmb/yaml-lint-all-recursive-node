@@ -1,0 +1,13 @@
+%YAML 1.2
+# -*- coding: UTF-8, tab-width: 4 -*-
+---
+
+- at_least: "This bad quote'
+  is: detected
+  so: "this line is blamed."
+
+- however: "This one'
+  is: 'totally valid."
+
+...
+

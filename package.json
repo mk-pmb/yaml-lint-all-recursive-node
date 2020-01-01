@@ -1,0 +1,27 @@
+{
+  "name": "yaml-lint-all-recursive",
+  "version": "0.1.2",
+  "description": "Run yamllint (from package yaml-lint) on **/*.yaml",
+  "keywords": [
+    "yaml",
+    "lint"
+  ],
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/yaml-lint-all-recursive-node/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/yaml-lint-all-recursive-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/yaml-lint-all-recursive-node/issues"
+  },
+  "contributors": [],
+  "private": false,
+  "license": "ISC",
+  "bin": "lintall.sh",
+  "dependencies": {
+    "yaml-lint": "^1.2.4"
+  },
+  "devDependencies": {},
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+}
