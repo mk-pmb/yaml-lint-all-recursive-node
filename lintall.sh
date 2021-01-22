@@ -9,7 +9,10 @@ function lintall () {
   [ -x "$LINT_CLI" ] || return 8$(echo "E: cannot find the yamllint CLI" >&2)
   local FIND_OPTS=(
     -mount
-    -name '*.yaml'
+    '(' -false
+      -o -name '*.yaml'
+      -o -name '*.yml'
+      ')'
     )
   local FIND_PATHS=()
   local ITEM=

@@ -5,7 +5,7 @@ yaml-lint-all-recursive
 <!--/#echo -->
 
 <!--#echo json="package.json" key="description" -->
-Run yamllint (from package yaml-lint) on **/*.yaml
+Run yamllint (from package yaml-lint) on **/*.y{a,}ml
 <!--/#echo -->
 
 
