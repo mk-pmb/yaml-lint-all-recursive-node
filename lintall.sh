@@ -5,7 +5,8 @@
 function lintall () {
   export LANG{,UAGE}=en_US.UTF-8  # make error messages search engine-friendly
   local SELFPATH="$(readlink -m "$BASH_SOURCE"/..)"
-  local LINT_CLI="$(nodejs "$SELFPATH"/find_yamllint_cli.js)"
+  local NODE_PROG="$(which node{js,} |& grep -m 1 -Pe '^/')"
+  local LINT_CLI="$("$NODE_PROG" -- "$SELFPATH"/find_yamllint_cli.js)"
   [ -x "$LINT_CLI" ] || return 8$(echo "E: cannot find the yamllint CLI" >&2)
   local FIND_OPTS=(
     -mount
@@ -27,7 +28,7 @@ function lintall () {
   while read -r -u 7 ITEM; do
     ITEM="${ITEM#./}"
     echo -n "$ITEM: "
-    LINT_MSG="$(nodejs -- "$LINT_CLI" /dev/stdin <"$ITEM" 2>&1)"
+    LINT_MSG="$("$NODE_PROG" -- "$LINT_CLI" /dev/stdin <"$ITEM" 2>&1)"
     LINT_RV=$?
     <<<"$LINT_MSG" "$SELFPATH"/tidy_output.sed
     [ "$LINT_RV" == 0 ] || (( ERR_CNT += 1 ))

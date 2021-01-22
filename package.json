@@ -1,6 +1,6 @@
 {
   "name": "yaml-lint-all-recursive",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Run yamllint (from package yaml-lint) on **/*.y{a,}ml",
   "keywords": [
     "yaml",
